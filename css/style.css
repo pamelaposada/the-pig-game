@@ -10,19 +10,24 @@ body {
   text-align: center;
   font-family: "Nunito", sans-serif;
   font-weight: 400;
-  height: 100vh;
   color: #333;
+
+  backdrop-filter: blur(200px);
+  filter: blur();
+  overflow: hidden;
+  
+}
+.main-background {
+  /* padding: 50px;
+  width: 100%; */
+  height: 100%;
+  padding: 0 50px 50px 50px;
   background-image: linear-gradient(
     180deg,
     rgb(239, 135, 130),
     rgb(183, 127, 124)
   );
-  backdrop-filter: blur(200px);
-  filter: blur();
-}
-.main-background {
-  padding-left: 80px;
-  padding-right: 80px;
+
 }
 
 h1 {
@@ -32,6 +37,11 @@ h4 {
   font-size: 30px;
 }
 
+/* Header */
+.logo-section{
+  width: 100%;
+  height: 150px;
+}
 .pig-photo {
   max-width: 15%;
   display: block;
@@ -39,64 +49,96 @@ h4 {
   margin-right: auto;
   margin-bottom: 30px;
 }
-.player {
-  /* background-image: linear-gradient(
-    180deg,
-    rgb(217, 134, 15),
-    rgb(225, 99, 66)
-  ); */
-  background-color: #efbbc4;
-  width: 500px;
+/* Game section */
+
+/* Flex box */
+.game{
+  display: flex;
+  height: 100%;
+}
+
+/* First player */
+.players{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 33%;
   height: 500px;
+  background-color: #efbbc4;
   border-radius: 10px;
-  padding: 40px;
   backdrop-filter: blur(200px);
   filter: blur();
   color: #33001a;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3);
   align-items: center;
 }
+
 .player p {
   font-size: 50px;
-  padding-bottom: 130px;
   color: #fff;
-}
-.player--1 {
-  float: left;
-}
-.player--2 {
-  float: right;
-}
-.current {
-  background-color: #ff9999;
-
-  padding: 30px;
-  border-radius: 20px;
-  width: 300px;
-  margin-left: 60px;
 }
 .player--active {
   background-color: #ffe6e6;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: center;
 }
 .player--active p {
   color: #990000;
 }
+.current {
+  background-color: #ff9999;
+  border-radius: 20px;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .player--active .current {
   background-color: #ffcccc;
+
 }
-/* .score {
-  font-size: 45px;
-  margin-bottom: 130px;
-} */
+
+
+/* Button section */
+.middle-section{
+  width: 33%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.new-game{
+  width: 100%;
+  height: 80px;
+  padding-top: 20px;
+}
+.dice-section{
+  padding-top: 10%;
+  width: 100%;
+  height: 250px;
+  align-items: center;
+  background-color: #5f5358;
+}
+.dice-number {
+  max-width: 150px;
+}
+.player-btns{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 30%;
+}
 .btn {
   border-radius: 5px;
   padding: 6px 20px;
-  /* background-image: linear-gradient(
-        56deg,
-        rgba(43, 46, 224, 0.15) 0%,
-        rgba(26, 218, 182, 0.15) 100%
-      ),
-      linear-gradient(336deg, rgb(50, 52, 221), rgb(60, 239, 241)); */
   background-color: #1aa3ff;
   font-family: "Nunito", sans-serif;
   box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.3);
@@ -104,9 +146,11 @@ h4 {
   font-size: 16px;
   backdrop-filter: blur(10px);
   border-style: none;
+  margin-bottom: 10%;
 }
 .btn:hover {
   background-color: #006bb3;
+  cursor: pointer;
 }
 .btn-special {
   border-style: none;
@@ -119,32 +163,8 @@ h4 {
   background-color: #942c2c;
 }
 
-/* Absolute position (buttons */
-.btn-new-css {
-  position: absolute;
-  left: 645px;
-}
-.btn-roll-css {
-  position: absolute;
-  left: 645px;
-  top: 470px;
-}
-.btn-hold-css {
-  position: absolute;
-  left: 665px;
-  top: 540px;
-}
-.btn-instr-css {
-  position: absolute;
-  right: 50px;
-  top: 30px;
-}
-.dice-number {
-  max-width: 150px;
-  position: absolute;
-  left: 645px;
-  top: 270px;
-}
+
+
 
 .reload-img {
   max-width: 20px;
@@ -169,10 +189,19 @@ h4 {
 }
 
 /* MODAL CLASSES */
+
+/* Modal btn */
+.btn-instr-css {
+  position: absolute;
+  right: 50px;
+  top: 30px;
+  cursor: pointer;
+  z-index: 2;
+}
 .overlay {
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 499;
   display: none;
   position: absolute;
   overflow: auto;
@@ -181,11 +210,9 @@ h4 {
   backdrop-filter: blur(3px);
 }
 .modal {
-  z-index: 2;
   position: absolute;
-  left: 350px;
-  top: 110px;
-  width: 700px;
+  z-index: 500;
+  width: 100%;
   height: 450px;
   display: none;
   background-color: white;
@@ -216,6 +243,13 @@ h4 {
 /* Hidden class for the game and winner player class */
 .player--winner {
   background-color: #1aa3ff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: center;
 }
 .player--winner h1 {
   color: white;
@@ -225,4 +259,225 @@ h4 {
 }
 .hidden {
   display: none;
+}
+
+
+
+/* Media queries ---------------------------- */
+
+/* Big screens */
+@media only screen and (min-width: 1920px) and (max-width: 2500px) {
+
+  .logo-section{
+    height: 200px;
+  }
+  .players{
+    height: 600px;
+  }
+  .main-background{
+    height: 1368px;
+  }
+
+}
+
+@media only screen and (min-width: 1551px) and (max-width: 1919px) {
+  .main-background{
+    height: 1368px;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1550px) {
+  .main-background{
+    height: 1368px;
+  }
+
+}
+
+@media only screen and (min-width: 1023px) and (max-width: 1439px){
+  .main-background{
+    height: 1368px;
+  }
+  .current{
+    width: 150px;
+    height: 100px;
+  }
+}
+@media only screen and (min-width: 980px) and (max-width: 1024px){
+  .main-background{
+    height: 1368px;
+  }
+  .current{
+    width: 180px;
+    height: 100px;
+  
+  }
+  
+}
+
+
+/* Medium size screens */
+@media only screen and (min-width: 750px) and (max-width: 979px){
+  .main-background{
+    height: 1368px;
+  }
+  .current{
+    width: 180px;
+    height: 100px;
+  
+  }
+  .pig-photo {
+    max-width: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  .main-background{
+    height: 1368px;
+
+  }
+  .middle-section{
+    width: 25%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 540px) and (max-width: 749px){
+  .main-background{
+    padding:  20px;
+    overflow: hidden;
+    height: 1368px;
+  }
+  .pig-photo {
+    max-width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+
+  .middle-section{
+    width: 25%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #006bb3; */
+  }
+  .players{
+    width: 37%;
+  }
+  .current{
+    width: 180px;
+    height: 100px;
+  
+  }
+  .pig-photo {
+    max-width: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  .btn {
+    width: 80px;
+    border-radius: 5px;
+    /* padding: 6px 20px; */
+    background-color: #1aa3ff;
+    font-family: "Nunito", sans-serif;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+    border-style: none;
+  }
+  .player-btns{
+    padding-left: 30px;
+  }
+  .dice-section{
+    padding-top: 45%;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    background-color: #5f5358;
+  }
+  .dice-number {
+    max-width: 100px;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 539px){
+  .main-background{
+    padding:  10px;
+    overflow: hidden;
+    height: 1368px;
+  }
+  .pig-photo {
+    max-width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+
+  .middle-section{
+    width: 25%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .players{
+    width: 37%;
+  }
+  .current{
+    width: 150px;
+  }
+  .pig-photo {
+    max-width: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  .btn {
+    width: 80px;
+    border-radius: 5px;
+    background-color: #1aa3ff;
+    font-family: "Nunito", sans-serif;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 12px;
+    backdrop-filter: blur(10px);
+    border-style: none;
+  }
+  .player-btns{
+    padding-left: 20px;
+  }
+  .player p {
+    font-size: 40px;
+    color: #fff;
+  }
+  .dice-section{
+    padding-top: 45%;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    background-color: #5f5358;
+  }
+  .dice-number {
+    max-width: 100px;
+  }
+  .modal {
+    height: 100%;
+
+  }
 }

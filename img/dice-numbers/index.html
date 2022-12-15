@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pig Game | Javascrip</title>
+</head>
+<body>
+    <button class="btn-special btn-instr-css show-modal"><img src="img/001-written-conversation-speech.png" alt="instructions" class="special"></button>
+    <div class="modal">
+        <button class="close-modal">&times;</button>
+        <h1>Game Instructions</h1>
+        <p>
+            Each turn, the player repeatedly rolls the dice (ROLL DICE button) until either a 1 is rolled or the player decides to hold (HOLD button).
+        </p> 
+        <br>
+        <p>
+            If the player rolls a 1, they score nothing and it becomes the next player's turn.
+        </p> 
+        <br>
+        <p>
+            If the player rolls any other number, it is added to their CURRENT score and the player's turn continues.
+        </p>
+        <br>
+        <p>
+            If a player chooses to hold (HOLD button), their turn total is added to their score, and it becomes the next player's turn.
+        </p>
+        <br>
+        <p>
+            The first player to score 100 or more points wins.
+        </p>
+    </div>
+    <div class="overlay"></div>
+    <main class="main-background">
+    
+    <img src="img/pig-game-03-01-01-01.png" alt="pig" class="pig-photo">
+    
+    <div class="player player--1 player-0 player--active">
+        <h1>Player 1</h1>
+        <p id="score--1" class="score">21</p>
+        <div class="current">
+            <h3 class="winner1">CURRENT</h3>
+            <h4 id="current--0">0</h4>
+        </div>
+    </div>
+    <img src="dice-1.png" alt="dice-1" class="dice-number dice">
+    <button class="btn btn-new-css btn--new"> <img src="img/001-reload.png" alt="reload" class="reload-img"> NEW GAME</button>
+    <button class="btn btn-roll-css btn--roll"> <img src="img/002-dice.png" alt="roll-dice" class="dice-img"> ROLL DICE</button>
+    <button class="btn btn-hold-css btn--hold"> <img src="img/003-hold.png" alt="holdbutton" class="hold-img"> HOLD</button>
+    <div class="player player--2 player-1">
+        <h1>Player 2</h1>
+        <p id="score--2" class="score">0</p>
+        <div class="current">
+            <h3 class="winner2">CURRENT</h3>
+            <h4 id="current--1">0</h4>
+        </div>
+    </div>
+    </main>
+    
+    <script src="js/code.js"></script>
+    
+    
+</body>
+</html>

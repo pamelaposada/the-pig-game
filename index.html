@@ -8,7 +8,6 @@
     <title>Pig Game | Javascrip</title>
 </head>
 <body>
-    <button class="btn-special btn-instr-css show-modal"><img src="img/001-written-conversation-speech.png" alt="instructions" class="special"></button>
     <div class="modal">
         <button class="close-modal">&times;</button>
         <h1>Game Instructions</h1>
@@ -33,28 +32,52 @@
         </p>
     </div>
     <div class="overlay"></div>
+
+    <button class="btn-special btn-instr-css show-modal"><img src="img/001-written-conversation-speech.png" alt="instructions" class="special"></button>
+
     <main class="main-background">
-    
-    <img src="img/pig-game-03-01-01-01.png" alt="pig" class="pig-photo">
-    
-    <div class="player player--1 player-0 player--active">
-        <h1>Player 1</h1>
-        <p id="score--1" class="score">21</p>
-        <div class="current">
-            <h3 class="winner1">CURRENT</h3>
-            <h4 id="current--0">0</h4>
+        <div class="logo-section">
+            <img src="img/pig-game-03-01-01-01.png" alt="pig" class="pig-photo">
         </div>
-    </div>
-    <img src="dice-1.png" alt="dice-1" class="dice-number dice">
-    <button class="btn btn-new-css btn--new"> <img src="img/001-reload.png" alt="reload" class="reload-img"> NEW GAME</button>
-    <button class="btn btn-roll-css btn--roll"> <img src="img/002-dice.png" alt="roll-dice" class="dice-img"> ROLL DICE</button>
-    <button class="btn btn-hold-css btn--hold"> <img src="img/003-hold.png" alt="holdbutton" class="hold-img"> HOLD</button>
-    <div class="player player--2 player-1">
-        <h1>Player 2</h1>
-        <p id="score--2" class="score">0</p>
-        <div class="current">
-            <h3 class="winner2">CURRENT</h3>
-            <h4 id="current--1">0</h4>
+        
+    
+    
+    <div class="game">
+        <div class="players">
+            <div class="player player--1 player-0 player--active">
+                <h1>Player 1</h1>
+                <p id="score--1" class="score">21</p>
+                <div class="current">
+                    <h3 class="winner1">CURRENT</h3>
+                    <h4 id="current--0">0</h4>
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="middle-section">
+            <div class="new-game">
+                <button class="btn btn-new-css btn--new"> <img src="img/001-reload.png" alt="reload" class="reload-img"> NEW GAME</button>
+            </div>
+            <div class="dice-section">
+                <img src="dice-1.png" alt="dice-1" class="dice-number dice">
+            </div>
+            <div class="player-btns">
+                <button class="btn btn-roll-css btn--roll"> <img src="img/002-dice.png" alt="roll-dice" class="dice-img"> ROLL DICE</button>
+                <button class="btn btn-hold-css btn--hold"> <img src="img/003-hold.png" alt="holdbutton" class="hold-img"> HOLD</button>
+            </div>
+            
+
+        </div>
+        <div class="players">
+            <div class="player player--2 player-1">
+                <h1>Player 2</h1>
+                <p id="score--2" class="score">0</p>
+                <div class="current">
+                    <h3 class="winner2">CURRENT</h3>
+                    <h4 id="current--1">0</h4>
+                </div>
+            </div>
         </div>
     </div>
     </main>

@@ -59,7 +59,7 @@ function rollButton(){
     dice.classList.remove('hidden')
     let randomDice = randomNumber()
     //The dice src will be the dice + random number
-    dice.src = `dice-${randomDice}.png` 
+    dice.src = `img/dice-numbers/dice-${randomDice}.png` 
     console.log(`random number: ${randomDice}`)
     // If the dice number is equal to 1 switch player
     if (randomDice == 1){       
@@ -142,12 +142,12 @@ btnNewGame.addEventListener('click', function(){
     location.reload()
 })
 
-// Create a function that returns 6 random numbers
+// Return 6 random numbers
 function randomNumber(){
     return(Math.floor(Math.random() * 6) +1)
 }
 
-//Create a function that returns the sum of numbers inside an array (scores)
+//Return the sum of numbers inside an array (scores)
 function sumNumbers(x){
     let sum = 0
     for (let i = 0; i< x.length; i++){
