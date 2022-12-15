@@ -266,7 +266,7 @@ h4 {
 /* Media queries ---------------------------- */
 
 /* Big screens */
-@media only screen and (min-width: 1920px) and (max-width: 2500px) {
+@media only screen and (min-width: 1820px) and (max-width: 2500px) {
 
   .logo-section{
     height: 200px;
@@ -280,9 +280,15 @@ h4 {
 
 }
 
-@media only screen and (min-width: 1551px) and (max-width: 1919px) {
+@media only screen and (min-width: 1551px) and (max-width: 1819px) {
   .main-background{
     height: 1368px;
+  }
+  .logo-section{
+    height: 200px;
+  }
+  .players{
+    height: 600px;
   }
 }
 
